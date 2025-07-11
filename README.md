@@ -50,7 +50,9 @@ this will show the tables created
 this is for the table structures
 <img width="1095" height="595" alt="Screenshot 2025-07-11 110718" src="https://github.com/user-attachments/assets/0d8b42cb-1e92-447d-8ba2-0106a0cb847d" />
 let's insert some data into them
+<img width="1095" height="545" alt="Screenshot 2025-07-11 111603" src="https://github.com/user-attachments/assets/06919502-2cdf-4607-ac1c-a4ea1f926925" />
 
+## STEP 4
 
 
 
