@@ -18,18 +18,38 @@ migration of mysql database from an EC2 instance to RDS mysql
 - You can now connect to your instance -for this scenario i will connect via SSH
   <img width="1543" height="994" alt="Screenshot 2025-07-11 103400" src="https://github.com/user-attachments/assets/c4c52a35-0884-42ba-8b31-85b6a33c691e" />
 
-  ## STEP 2 - Install mysql database and insert data into it
-  ### use the following command to install mysql on ubuntu
+## STEP 2 - Install mysql database and insert data into it
+### use the following command to install mysql on ubuntu
   - sudo apt install mysql-server
-  ### for the demo we won't need alot of configuration for now...open mysql using this command below
+### for the demo we won't need alot of configuration for now...open mysql using this command below
   - sudo mysql
  
-  ## STEP 3 - Let us insert some dummy data into this database that we are about to create.
+## STEP 3 - Let us insert some dummy data into this database that we are about to create.
 
   - CREATE DATABASE university_db;
   - use university_db;
   <img width="536" height="538" alt="Screenshot 2025-07-11 105625" src="https://github.com/user-attachments/assets/e14cb45e-138b-466e-987a-ea7f79950a18" />
 
+lets now create tables
+
+-CREATE TABLE students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    enrollment_date DATE
+);
+
+CREATE TABLE courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100),
+    course_code VARCHAR(20) UNIQUE,
+    credit_hours INT
+);
+this will show the tables created
+<img width="473" height="277" alt="Screenshot 2025-07-11 110515" src="https://github.com/user-attachments/assets/43cbbb11-a675-4828-a533-9acea7995217" />
+this is for the table structures
+<img width="1095" height="595" alt="Screenshot 2025-07-11 110718" src="https://github.com/user-attachments/assets/0d8b42cb-1e92-447d-8ba2-0106a0cb847d" />
+let's insert some data into them
 
 
 
