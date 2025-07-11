@@ -8,5 +8,8 @@ migration of mysql database from an EC2 instance to RDS mysql
 - Create a user under IAM so that we avoid using the root account(optional)
 - Navigate to your console and search for ec2.
 - launch an instance......
-- follow the recommended selections incase you have no experiences,,,
-- 
+    - choose on a name for your instance.
+    - Select an AMI(ubuntu)
+    - For the demo we will choose free-tier so as to not get charged
+    - Create a key pair if you do not have one already
+    - Then press on launch instance.
