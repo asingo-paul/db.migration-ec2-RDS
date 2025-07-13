@@ -57,7 +57,7 @@ this will show the tables created
 
 <img width="1095" height="545" alt="Screenshot 2025-07-11 111603" src="https://github.com/user-attachments/assets/06919502-2cdf-4607-ac1c-a4ea1f926925" />
 
-## STEP 4 : Now you can migrate your database
+## STEP 4 - Now you can migrate your database
 
 
 
