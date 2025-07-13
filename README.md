@@ -61,13 +61,13 @@ this will show the tables created
 
 ### Get the dump of your existing datatabase on ec2
 
-       mysqldump -u root -p ec2db  >  ec2db.sql
+       mysqldump -u root -p university_db  >  university_db.sql
   
 ### Connect to your RDS db 
   
 ### Migrate the database dump that you have taken from STEP 1 to RDS
 Make sure that you allow port 3306 on your security group
-       mysql -h <replace this with your rds endpoint here > -p 3306 rdsuser -p rdsdb < ec2db.sql
+       mysql -h <replace this with your rds endpoint here > -p 3306 rdsuser -p rdsdb < university_db.sql
 
        mysql -h <replace this with your rds endpoint here > -p 3306 rdsuser -p
 ### Verify that the data is available
