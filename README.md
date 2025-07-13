@@ -20,31 +20,31 @@ migration of mysql database from an EC2 instance to RDS mysql
 
 ## STEP 2 - Install mysql database and insert data into it
 ### use the following command to install mysql on ubuntu
-  - sudo apt install mysql-server
+      - sudo apt install mysql-server
 ### for the demo we won't need alot of configuration for now...open mysql using this command below
-  - sudo mysql
+      - sudo mysql
  
 ## STEP 3 - Let us insert some dummy data into this database that we are about to create.
 
-  - CREATE DATABASE university_db;
-  - use university_db;
+        CREATE DATABASE university_db;
+        use university_db;
   <img width="536" height="538" alt="Screenshot 2025-07-11 105625" src="https://github.com/user-attachments/assets/e14cb45e-138b-466e-987a-ea7f79950a18" />
 
 lets now create tables
 
--CREATE TABLE students (
-    student_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100) UNIQUE,
-    enrollment_date DATE
-);
+      CREATE TABLE students (
+        student_id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100),
+        email VARCHAR(100) UNIQUE,
+        enrollment_date DATE
+    );
 
-CREATE TABLE courses (
-    course_id INT AUTO_INCREMENT PRIMARY KEY,
-    course_name VARCHAR(100),
-    course_code VARCHAR(20) UNIQUE,
-    credit_hours INT
-);
+       CREATE TABLE courses (
+            course_id INT AUTO_INCREMENT PRIMARY KEY,
+            course_name VARCHAR(100),
+            course_code VARCHAR(20) UNIQUE,
+            credit_hours INT
+      );
 this will show the tables created
 
 <img width="473" height="277" alt="Screenshot 2025-07-11 110515" src="https://github.com/user-attachments/assets/43cbbb11-a675-4828-a533-9acea7995217" />
@@ -57,7 +57,21 @@ this will show the tables created
 
 <img width="1095" height="545" alt="Screenshot 2025-07-11 111603" src="https://github.com/user-attachments/assets/06919502-2cdf-4607-ac1c-a4ea1f926925" />
 
-## STEP 4 - Now you can migrate your database
+## STEP 4 - Now you can migrate your database from EC2 to RDS
+
+### Get the dump of your existing datatabase on ec2
+
+    -  mysqldump -u root -p ec2db  >  ec2db.sql
+  
+### Connect to your RDS db 
+  
+### Migrate the database dump that you have taken from STEP 1 to RDS
+Make sure that you allow port 3306 on your security group
+    -  mysql -h <replace this with your rds endpoint here > -p 3306 rdsuser -p rdsdb < ec2db.sql
+
+    -  mysql -h <replace this with your rds endpoint here > -p 3306 rdsuser -p
+### Verify that the data is available
+
 
 
 
